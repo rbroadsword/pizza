@@ -1,9 +1,10 @@
-.order {
+#order {
   padding: 1rem;
-  margin: 2rem;
   justify-content: center;
   min-height: 80vh;
   display: block;
+  margin: auto;
+
 }
 
 body { 
