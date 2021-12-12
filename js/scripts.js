@@ -19,6 +19,8 @@ if (this.size === "small") {
 return this.totalCost;
 }
 
+
+
 //User Interface
 
 $(document).ready(function() {
@@ -30,8 +32,13 @@ $(document).ready(function() {
     let myOrder = new Pizza(size, toppings, crust)
     $("#order").hide();
     $('#deliver').show();
-    $('#cost').text(myOrder.totalCost); //still working on having the totalCost appear here. 
-    $('#my-order').text(myOrder); //still working on having the order appear here. 
+    
+    const orderKeys = Object.keys(myOrder);
+    let orderString = ""; 
+    orderKeys.forEach(function(key){
+      orderString = orderString.concat(key + ": " + myOrder[key]);
+    });
+    $('#my-order').text(orderString);
     console.log(myOrder.toppings); 
   });
 })
