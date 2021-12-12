@@ -17,3 +17,15 @@ if (this.size === "small") {
 }
 return this.totalCost;
 }
+
+//User Interface
+
+$(document).ready(function() {
+  $(form#pizza).submit(function(event) {
+    event.preventDefault();
+    const size = $("input#size").val();
+    const toppings = $("input#")
+    const crust = $("input#crust").val();
+  }
+})
+

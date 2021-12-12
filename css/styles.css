@@ -1,0 +1,25 @@
+.order {
+  padding: 1rem;
+  margin: 2rem;
+  justify-content: center;
+  min-height: 80vh;
+  display: block;
+}
+
+body { 
+  background-image: url("../img/spongebob-pizza-delivery1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heading {
+  min-height: 15vh;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+}
