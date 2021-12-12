@@ -27,6 +27,7 @@ $(document).ready(function() {
     const toppings = $('input[type="checkbox"]:checked')
     const crust = $("input#crust").val();
     $("#order").hide();
+    $('#deliver').show();
   });
 })
 
