@@ -7,6 +7,7 @@ function Pizza(size, toppings, crust, totalCost) {
   this.totalCost = totalCost;
 }
 
+
 Pizza.prototype.price = function() { 
 if (this.size === "small") {
   this.totalCost = "10";
@@ -26,8 +27,11 @@ $(document).ready(function() {
     const size = $("input#size").val();
     const toppings = $('input[type="checkbox"]:checked')
     const crust = $("input#crust").val();
+    let myOrder = new Pizza(size, toppings, crust)
     $("#order").hide();
     $('#deliver').show();
+    $('#cost').text();
+    console.log(myOrder);
   });
 })
 

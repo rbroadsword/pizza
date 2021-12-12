@@ -9,6 +9,9 @@
 #deliver {
   display: none; 
 }
+#deliver p {
+  font-size: 3rem;
+}
 
 body { 
   background-image: url("../img/pizza.jpg");
