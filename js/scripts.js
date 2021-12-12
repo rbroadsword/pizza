@@ -30,8 +30,9 @@ $(document).ready(function() {
     let myOrder = new Pizza(size, toppings, crust)
     $("#order").hide();
     $('#deliver').show();
-    $('#cost').text();
-    console.log(myOrder);
+    $('#cost').text(myOrder.totalCost); //still working on having the totalCost appear here. 
+    $('#my-order').text(myOrder); //still working on having the order appear here. 
+    console.log(myOrder.toppings); 
   });
 })
 
