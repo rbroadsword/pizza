@@ -32,7 +32,7 @@ $(document).ready(function() {
     let myOrder = new Pizza(size, toppings, crust)
     $("#order").hide();
     $('#deliver').show();
-    
+    //Still trouble shooting the below code, I had this working in the console but it is not here. 
     const orderKeys = Object.keys(myOrder);
     let orderString = ""; 
     orderKeys.forEach(function(key){
@@ -40,6 +40,7 @@ $(document).ready(function() {
     });
     $('#my-order').text(orderString);
     console.log(myOrder.toppings); 
+    console.log(orderString);
   });
 })
 
