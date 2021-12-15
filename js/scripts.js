@@ -19,7 +19,7 @@ if (this.size === "small") {
 return this.totalCost;
 }
 
-Pizza.prototype.display = function() {
+Pizza.prototype.display = function(myOrder) {
   const orderKeys = Object.keys(myOrder);
   let orderString = ""; 
     orderKeys.forEach(function(key){
@@ -35,12 +35,13 @@ $(document).ready(function() {
   $("form#pizza").submit(function(event) {
     event.preventDefault();
     const size = $("#size").val();
-    const toppings = $('input[name="topping"]:checked')
+    const toppings = $('input[name="topping"]:checked');
     const crust = $("#crust").val();
-    let myOrder = new Pizza(size, toppings, crust)
+    let myOrder = new Pizza(size, toppings, crust);
+    let cost = Pizza.totalCost;
     let displayOrder = Pizza.display; 
-    $(".my-order").text("Is this working");
     $("#order").hide();
+    $(".my-order").text("Is this working");
     $("#deliver").show();
     console.log(displayOrder);
     console.log(crust);
