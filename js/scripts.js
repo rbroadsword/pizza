@@ -34,15 +34,18 @@ Pizza.prototype.display = function() {
 $(document).ready(function() {
   $("form#pizza").submit(function(event) {
     event.preventDefault();
-    const size = $("input#size").val();
-    const toppings = $('input[type="checkbox"]:checked')
-    const crust = $("input#crust").val();
+    const size = $("#size").val();
+    const toppings = $('input[name="topping"]:checked')
+    const crust = $("#crust").val();
     let myOrder = new Pizza(size, toppings, crust)
-    let displayOrder = this.display; 
+    let displayOrder = Pizza.display; 
+    $(".my-order").text("Is this working");
     $("#order").hide();
     $("#deliver").show();
-    $(".my-order").text("hey girl");
     console.log(displayOrder);
+    console.log(crust);
+    console.log(toppings);
+    console.log(size);
   });
 })
 
