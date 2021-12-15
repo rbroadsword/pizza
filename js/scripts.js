@@ -19,6 +19,14 @@ if (this.size === "small") {
 return this.totalCost;
 }
 
+Pizza.prototype.display = function() {
+  const orderKeys = Object.keys(myOrder);
+  let orderString = ""; 
+    orderKeys.forEach(function(key){
+      orderString = orderString.concat(key + ": " + myOrder[key]);
+    });
+}
+
 
 
 //User Interface
@@ -30,15 +38,10 @@ $(document).ready(function() {
     const toppings = $('input[type="checkbox"]:checked')
     const crust = $("input#crust").val();
     let myOrder = new Pizza(size, toppings, crust)
+    let displayOrder = this.display; 
     $("#order").hide();
     $('#deliver').show();
-    //Still trouble shooting the below code, I had this working in the console but it is not here. 
-    const orderKeys = Object.keys(myOrder);
-    let orderString = ""; 
-    orderKeys.forEach(function(key){
-      orderString = orderString.concat(key + ": " + myOrder[key]);
-    });
-    $('#my-order').text(orderString);
+    $('#my-order').text(displayOrder);
     console.log(myOrder.toppings); 
     console.log(orderString);
   });
