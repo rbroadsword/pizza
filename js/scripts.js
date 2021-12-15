@@ -40,10 +40,9 @@ $(document).ready(function() {
     let myOrder = new Pizza(size, toppings, crust)
     let displayOrder = this.display; 
     $("#order").hide();
-    $('#deliver').show();
-    $('#my-order').text(displayOrder);
-    console.log(myOrder.toppings); 
-    console.log(orderString);
+    $("#deliver").show();
+    $(".my-order").text("hey girl");
+    console.log(displayOrder);
   });
 })
 
