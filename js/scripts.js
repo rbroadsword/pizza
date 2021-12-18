@@ -19,34 +19,26 @@ if (this.size === "small") {
 return this.totalCost;
 }
 
-Pizza.prototype.display = function(myOrder) {
-  const orderKeys = Object.keys(myOrder);
-  let orderString = ""; 
-    orderKeys.forEach(function(key){
-      orderString = orderString.concat(key + ": " + myOrder[key]);
-    });
-}
-
-
-
 //User Interface
 
 $(document).ready(function() {
   $("form#pizza").submit(function(event) {
     event.preventDefault();
+    const name = $("#first-name").val();
     const size = $("#size").val();
-    const toppings = $('input[name="topping"]:checked');
+    const toppings = [];
     const crust = $("#crust").val();
     let myOrder = new Pizza(size, toppings, crust);
-    let cost = Pizza.totalCost;
-    let displayOrder = Pizza.display; 
+    let cost = myOrder.price();
+
     $("#order").hide();
-    $(".my-order").text("Is this working");
+    $("#name").text(name);
+    $(".display-size").text(size);
+    $(".display-toppings").text(toppings.join(" , "));
+    $(".display-crust").text(crust);
+    $(".display-price").text(cost);
     $("#deliver").show();
-    console.log(displayOrder);
-    console.log(crust);
-    console.log(toppings);
-    console.log(size);
+    console.log(cost); 
   });
   $(".clickable").click(function(){
     $("#deliver").hide();
