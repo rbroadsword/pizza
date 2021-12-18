@@ -48,5 +48,10 @@ $(document).ready(function() {
     console.log(toppings);
     console.log(size);
   });
+  $(".clickable").click(function(){
+    $("#deliver").hide();
+    $("#order").show();
+    location.reload(true);
+  })
 })
 
