@@ -30,7 +30,9 @@ $(document).ready(function() {
     const crust = $("#crust").val();
     let myOrder = new Pizza(size, toppings, crust);
     let cost = myOrder.price();
-
+    $("input:checkbox[name='topping']:checked").each(function(){
+      toppings.push($(this).val());
+  });
     $("#order").hide();
     $("#name").text(name);
     $(".display-size").text(size);
@@ -38,7 +40,6 @@ $(document).ready(function() {
     $(".display-crust").text(crust);
     $(".display-price").text(cost);
     $("#deliver").show();
-    console.log(cost); 
   });
   $(".clickable").click(function(){
     $("#deliver").hide();
